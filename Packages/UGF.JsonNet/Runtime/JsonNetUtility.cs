@@ -9,34 +9,48 @@ namespace UGF.JsonNet.Runtime
         public static JsonSerializerSettings DefaultSettings { get; } = new JsonSerializerSettings
         {
             ContractResolver = new JsonNetContractResolver(),
-            Formatting = Formatting.Indented,
             TypeNameHandling = TypeNameHandling.Auto,
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore,
-            DefaultValueHandling = DefaultValueHandling.Ignore
+            NullValueHandling = NullValueHandling.Ignore
         };
 
-        public static string ToJson(object target, JsonSerializerSettings settings = null)
+        public static string ToJson(object target)
+        {
+            return ToJson(target, DefaultSettings);
+        }
+
+        public static string ToJson(object target, JsonSerializerSettings settings)
         {
             if (target == null) throw new ArgumentNullException(nameof(target));
+            if (settings == null) throw new ArgumentNullException(nameof(settings));
 
-            return JsonConvert.SerializeObject(target, settings ?? DefaultSettings);
+            return JsonConvert.SerializeObject(target, settings);
         }
 
-        public static T FromJson<T>(string text, JsonSerializerSettings settings = null)
+        public static T FromJson<T>(string text)
+        {
+            return FromJson<T>(text, DefaultSettings);
+        }
+
+        public static T FromJson<T>(string text, JsonSerializerSettings settings)
         {
             if (string.IsNullOrEmpty(text)) throw new ArgumentException("Value cannot be null or empty.", nameof(text));
+            if (settings == null) throw new ArgumentNullException(nameof(settings));
 
-            return JsonConvert.DeserializeObject<T>(text, settings ?? DefaultSettings);
+            return JsonConvert.DeserializeObject<T>(text, settings);
         }
 
-        public static string Format(string text, Formatting formatting = Formatting.None)
+        public static string Format(string text, bool readable = true)
         {
             using (var reader = new StringReader(text))
             using (var writer = new StringWriter())
             {
                 var jsonReader = new JsonTextReader(reader);
-                var jsonWriter = new JsonTextWriter(writer) { Formatting = formatting };
+                var jsonWriter = new JsonTextWriter(writer)
+                {
+                    Formatting = readable ? Formatting.Indented : Formatting.None,
+                    Indentation = 4
+                };
 
                 jsonWriter.WriteToken(jsonReader);
 
