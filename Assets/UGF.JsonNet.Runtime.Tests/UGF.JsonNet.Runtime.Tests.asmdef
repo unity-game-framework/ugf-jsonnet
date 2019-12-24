@@ -1,0 +1,19 @@
+{
+    "name": "UGF.JsonNet.Runtime.Tests",
+    "references": [
+        "GUID:63a84d759dbdad34287768b1f164c241"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

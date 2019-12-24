@@ -4,13 +4,13 @@ UGF.JsonNet
 
 ## Info
 
-- **Version**: `0.0.0-preview`
+- **Version**: `0.1.0-preview`
 - **Unity Version**: `2019.3.0`
 - **Api Compatibility Level**: `.NET Standard 2.0`
 
 ### Dependencies
 
-- N/A
+- [Newtonsoft Json](https://bintray.com/unity/unity/com.unity.nuget.newtonsoft-json): `2.0.0-preview`
 
 ### Changelog
 
@@ -19,7 +19,7 @@ UGF.JsonNet
 ### Registries
 
 - [Stable][2] (N/A)
-- [Develop][3] (N/A)
+- [Develop][3]
 
 ## Description
 
