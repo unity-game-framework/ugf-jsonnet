@@ -14,17 +14,24 @@ namespace UGF.JsonNet.Runtime
             NullValueHandling = NullValueHandling.Ignore
         };
 
-        public static string ToJson(object target)
+        public static string ToJson(object target, bool readable = false)
         {
-            return ToJson(target, DefaultSettings);
+            return ToJson(target, DefaultSettings, readable);
         }
 
-        public static string ToJson(object target, JsonSerializerSettings settings)
+        public static string ToJson(object target, JsonSerializerSettings settings, bool readable = false)
         {
             if (target == null) throw new ArgumentNullException(nameof(target));
             if (settings == null) throw new ArgumentNullException(nameof(settings));
 
-            return JsonConvert.SerializeObject(target, settings);
+            string text = JsonConvert.SerializeObject(target, settings);
+
+            if (readable)
+            {
+                text = Format(text);
+            }
+
+            return text;
         }
 
         public static T FromJson<T>(string text)

@@ -1,5 +1,4 @@
-﻿using System.Xml;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
 
 namespace UGF.JsonNet.Runtime.Tests
