@@ -6,7 +6,7 @@ namespace UGF.JsonNet.Runtime
 {
     public class JsonNetPropertyInheritanceCountComparer : IComparer<JsonProperty>
     {
-        public static JsonNetPropertyInheritanceCountComparer Default { get; } = new JsonNetPropertyInheritanceCountComparer();
+        public static IComparer<JsonProperty> Default { get; } = new JsonNetPropertyInheritanceCountComparer();
 
         public int Compare(JsonProperty x, JsonProperty y)
         {
