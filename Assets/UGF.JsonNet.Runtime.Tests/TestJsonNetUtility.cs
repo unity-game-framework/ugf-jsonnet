@@ -36,10 +36,14 @@ namespace UGF.JsonNet.Runtime.Tests
         {
             string text = Resources.Load<TextAsset>("data1").text;
             var target = JsonNetUtility.FromJson<Target3>(text);
+            var target2 = (Target3)JsonNetUtility.FromJson(text, typeof(Target3));
 
             Assert.AreEqual(1515, target.IntValue);
             Assert.AreEqual(false, target.BoolValue);
             Assert.AreEqual(5.5, target.FloatValue);
+            Assert.AreEqual(1515, target2.IntValue);
+            Assert.AreEqual(false, target2.BoolValue);
+            Assert.AreEqual(5.5, target2.FloatValue);
         }
 
         [Test]

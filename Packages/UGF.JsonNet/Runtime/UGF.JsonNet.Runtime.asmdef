@@ -1,5 +1,6 @@
 {
     "name": "UGF.JsonNet.Runtime",
+    "rootNamespace": "UGF.JsonNet.Runtime",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

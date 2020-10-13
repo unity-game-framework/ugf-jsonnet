@@ -47,6 +47,20 @@ namespace UGF.JsonNet.Runtime
             return JsonConvert.DeserializeObject<T>(text, settings);
         }
 
+        public static object FromJson(string text, Type type)
+        {
+            return FromJson(text, type, DefaultSettings);
+        }
+
+        public static object FromJson(string text, Type type, JsonSerializerSettings settings)
+        {
+            if (string.IsNullOrEmpty(text)) throw new ArgumentException("Value cannot be null or empty.", nameof(text));
+            if (type == null) throw new ArgumentNullException(nameof(type));
+            if (settings == null) throw new ArgumentNullException(nameof(settings));
+
+            return JsonConvert.DeserializeObject(text, type, settings);
+        }
+
         public static string Format(string text, bool readable = true)
         {
             using (var reader = new StringReader(text))
