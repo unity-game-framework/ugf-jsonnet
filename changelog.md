@@ -9,7 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Release Notes
 
-- No release notes.
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/4?closed=1)  
+    
+
+### Added
+
+- Add FromJson with target type as parameter ([#14](https://github.com/unity-game-framework/ugf-jsonnet/pull/14))  
+
+### Changed
+
+- Update project to Unity 2020.2 ([#13](https://github.com/unity-game-framework/ugf-jsonnet/pull/13))
 
 ## [1.0.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.0.0) - 2020-10-05  
 
