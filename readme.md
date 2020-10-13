@@ -4,35 +4,29 @@ UGF.JsonNet
 
 ## Info
 
-- **Version**: `0.2.0-preview`
-- **Unity Version**: `2019.3.0`
+- **Version**: `1.0.0`
+- **Unity**: `2020.1`
 - **API Compatibility Level**: `.NET Standard 2.0`
 
 ### Dependencies
 
-- [Newtonsoft Json](https://bintray.com/unity/unity/com.unity.nuget.newtonsoft-json): `2.0.0-preview`
+- `com.unity.nuget.newtonsoft-json`: `2.0.0`
+
+
+### Description
+
+Provides utilities to work with JsonNet.
 
 ### Changelog
 
-- [Full changelog][1]
+- [Full changelog](changelog.md)
 
-### Registries
+### Registry
 
-- [Stable][2] (N/A)
-- [Develop][3]
+- [Public](https://bintray.com/unity-game-framework/public)
 
-## Description
-
-No description.
+Read about where packages stored: [Registry](https://github.com/unity-game-framework/organization/blob/master/docs/registry.md).
 
 ## How to Install
 
-Read about how to install any packages from the `Unity Game Framework` registry: [Install Package][4].
-
----
-> Unity Game Framework | Copyright 2019
-
-[1]: changelog.md
-[2]: https://bintray.com/unity-game-framework/stable/com.ugf.jsonnet
-[3]: https://bintray.com/unity-game-framework/dev/com.ugf.jsonnet
-[4]: https://github.com/unity-game-framework/ugf-documentation/wiki/Install-Package
+Read about how to install any packages from the `Unity Game Framework` registry: [Install Package](https://github.com/unity-game-framework/organization/blob/master/docs/install-packages.md).
