@@ -67,6 +67,7 @@ namespace UGF.JsonNet.Runtime
             using (var writer = new StringWriter())
             {
                 var jsonReader = new JsonTextReader(reader);
+
                 var jsonWriter = new JsonTextWriter(writer)
                 {
                     Formatting = readable ? Formatting.Indented : Formatting.None,
