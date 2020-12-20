@@ -5,7 +5,7 @@ using UGF.JsonNet.Runtime.Converters;
 
 namespace UGF.JsonNet.Runtime.Tests.Converters
 {
-    public class TestPropertyNameConverts
+    public class TestConvertTypeNameBinder
     {
         private class Target
         {
@@ -36,18 +36,15 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 }
             };
 
-            var serializer = JsonSerializer.CreateDefault(JsonNetUtility.DefaultSettings);
+            var binder = new ConvertTypeNameBinder();
+            JsonSerializerSettings settings = JsonNetUtility.CreateDefault();
 
-            var writer = new ConvertPropertyNameWriter(new Dictionary<string, string>
-            {
-                { "$type", "type" }
-            });
+            settings.SerializationBinder = binder;
 
-            serializer.Serialize(writer, target);
+            binder.Provider.Add<Target1>("target1");
+            binder.Provider.Add<Target2>("target2");
 
-            string result = writer.TextWriter.ToString();
-
-            result = JsonNetUtility.Format(result);
+            string result = JsonNetUtility.ToJson(target, settings, true);
 
             Assert.Pass(result);
         }
@@ -64,25 +61,16 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 }
             };
 
-            var serializer = JsonSerializer.CreateDefault(JsonNetUtility.DefaultSettings);
+            var binder = new ConvertTypeNameBinder();
+            JsonSerializerSettings settings = JsonNetUtility.CreateDefault();
 
-            var writer = new ConvertPropertyNameWriter(new Dictionary<string, string>
-            {
-                { "$type", "type" }
-            });
+            settings.SerializationBinder = binder;
 
-            serializer.Serialize(writer, target);
+            binder.Provider.Add<Target1>("target1");
+            binder.Provider.Add<Target2>("target2");
 
-            string result = writer.TextWriter.ToString();
-
-            Assert.IsNotEmpty(result);
-
-            var reader = new ConvertPropertyNameReader(new Dictionary<string, string>
-            {
-                { "type", "$type" }
-            }, result);
-
-            var result2 = serializer.Deserialize<Target>(reader);
+            string result = JsonNetUtility.ToJson(target, settings);
+            var result2 = JsonNetUtility.FromJson<Target>(result, settings);
 
             Assert.NotNull(result2);
             Assert.IsNotEmpty(result2.Targets);
