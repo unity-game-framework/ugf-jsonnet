@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.1.0) - 2020-10-13  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/4?closed=1)  
+    
+
+### Added
+
+- Add FromJson with target type as parameter ([#14](https://github.com/unity-game-framework/ugf-jsonnet/pull/14))  
+
+### Changed
+
+- Update project to Unity 2020.2 ([#13](https://github.com/unity-game-framework/ugf-jsonnet/pull/13))
+
 ## [1.0.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.0.0) - 2020-10-05  
 
 ### Release Notes
