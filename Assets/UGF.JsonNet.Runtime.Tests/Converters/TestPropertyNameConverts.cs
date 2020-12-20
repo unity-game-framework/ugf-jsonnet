@@ -53,6 +53,42 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
         }
 
         [Test]
+        public void ToJsonWithBinder()
+        {
+            var target = new Target()
+            {
+                Targets =
+                {
+                    new Target1(),
+                    new Target2()
+                }
+            };
+
+            var binder = new ConvertTypeNameBinder();
+            JsonSerializerSettings settings = JsonNetUtility.CreateDefault();
+
+            settings.SerializationBinder = binder;
+
+            binder.Provider.Add<Target1>("target1");
+            binder.Provider.Add<Target2>("target2");
+
+            var serializer = JsonSerializer.CreateDefault(settings);
+
+            var writer = new ConvertPropertyNameWriter(new Dictionary<string, string>
+            {
+                { "$type", "type" }
+            });
+
+            serializer.Serialize(writer, target);
+
+            string result = writer.TextWriter.ToString();
+
+            result = JsonNetUtility.Format(result);
+
+            Assert.Pass(result);
+        }
+
+        [Test]
         public void FromJson()
         {
             var target = new Target()
@@ -65,6 +101,51 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
             };
 
             var serializer = JsonSerializer.CreateDefault(JsonNetUtility.DefaultSettings);
+
+            var writer = new ConvertPropertyNameWriter(new Dictionary<string, string>
+            {
+                { "$type", "type" }
+            });
+
+            serializer.Serialize(writer, target);
+
+            string result = writer.TextWriter.ToString();
+
+            Assert.IsNotEmpty(result);
+
+            var reader = new ConvertPropertyNameReader(new Dictionary<string, string>
+            {
+                { "type", "$type" }
+            }, result);
+
+            var result2 = serializer.Deserialize<Target>(reader);
+
+            Assert.NotNull(result2);
+            Assert.IsNotEmpty(result2.Targets);
+            Assert.AreEqual(2, result2.Targets.Count);
+        }
+
+        [Test]
+        public void FromJsonWithBinder()
+        {
+            var target = new Target()
+            {
+                Targets =
+                {
+                    new Target1(),
+                    new Target2()
+                }
+            };
+
+            var binder = new ConvertTypeNameBinder();
+            JsonSerializerSettings settings = JsonNetUtility.CreateDefault();
+
+            settings.SerializationBinder = binder;
+
+            binder.Provider.Add<Target1>("target1");
+            binder.Provider.Add<Target2>("target2");
+
+            var serializer = JsonSerializer.CreateDefault(settings);
 
             var writer = new ConvertPropertyNameWriter(new Dictionary<string, string>
             {
