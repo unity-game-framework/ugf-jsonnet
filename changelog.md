@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.0) - 2020-12-20  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/5?closed=1)  
+    
+
+### Added
+
+- Add type information with custom names ([#19](https://github.com/unity-game-framework/ugf-jsonnet/pull/19))  
+    - Add `ConvertTypeInfo` structure to define type conversion to name and assembly name.
+    - Add `IConvertTypeProvider` and `ConvertTypeProvider` as default implementation to manage known type infos.
+    - Add `ConvertTypeNameBinder` used with `JsonSerializerSettings` to override type information binding.
+- Add option to convert property names when read and write ([#18](https://github.com/unity-game-framework/ugf-jsonnet/pull/18))  
+    - Add `ConvertPropertyNameReader` and `ConvertPropertyNameWriter` used to convert target property names with specified names.
+
 ## [1.1.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.1.0) - 2020-10-13  
 
 ### Release Notes
