@@ -7,6 +7,9 @@ namespace UGF.JsonNet.Runtime.Converters
     {
         IReadOnlyCollection<ConvertTypeInfo> Infos { get; }
 
+        void Add<T>(string typeName);
+        void Add(Type type, string typeName);
+        void Add(Type type, string typeName, string assemblyName);
         void Add(ConvertTypeInfo info);
         bool Remove(string typeName);
         bool Remove(string typeName, string assemblyName);

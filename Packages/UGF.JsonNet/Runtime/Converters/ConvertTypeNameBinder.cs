@@ -7,6 +7,10 @@ namespace UGF.JsonNet.Runtime.Converters
     {
         public IConvertTypeProvider Provider { get; }
 
+        public ConvertTypeNameBinder() : this(new ConvertTypeProvider())
+        {
+        }
+
         public ConvertTypeNameBinder(IConvertTypeProvider provider)
         {
             Provider = provider ?? throw new ArgumentNullException(nameof(provider));
@@ -14,7 +18,7 @@ namespace UGF.JsonNet.Runtime.Converters
 
         public Type BindToType(string assemblyName, string typeName)
         {
-            ConvertTypeInfo info = Provider.Get(typeName, assemblyName);
+            ConvertTypeInfo info = !string.IsNullOrEmpty(assemblyName) ? Provider.Get(typeName, assemblyName) : Provider.Get(typeName);
 
             return info.Type;
         }

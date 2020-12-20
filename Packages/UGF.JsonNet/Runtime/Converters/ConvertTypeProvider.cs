@@ -11,13 +11,34 @@ namespace UGF.JsonNet.Runtime.Converters
         private readonly Dictionary<Type, ConvertTypeInfo> m_infoByType = new Dictionary<Type, ConvertTypeInfo>();
         private readonly Dictionary<(string, string), ConvertTypeInfo> m_infoByName = new Dictionary<(string, string), ConvertTypeInfo>();
 
+        public void Add<T>(string typeName)
+        {
+            Add(typeof(T), typeName);
+        }
+
+        public void Add(Type type, string typeName)
+        {
+            Add(type, typeName, string.Empty);
+        }
+
+        public void Add(Type type, string typeName, string assemblyName)
+        {
+            Add(new ConvertTypeInfo(type, typeName, assemblyName));
+        }
+
         public void Add(ConvertTypeInfo info)
         {
             if (!info.IsValid()) throw new ArgumentException("Value should be valid.", nameof(info));
 
-            m_infos.Add(info);
-            m_infoByType.Add(info.Type, info);
-            m_infoByName.Add((info.Name, info.Assembly), info);
+            if (m_infos.Add(info))
+            {
+                m_infoByType.Add(info.Type, info);
+                m_infoByName.Add((info.Name, info.Assembly), info);
+            }
+            else
+            {
+                throw new ArgumentException("An type info with the same information already exists.");
+            }
         }
 
         public bool Remove(string typeName)
