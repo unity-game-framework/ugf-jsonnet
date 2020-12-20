@@ -6,13 +6,18 @@ namespace UGF.JsonNet.Runtime
 {
     public static class JsonNetUtility
     {
-        public static JsonSerializerSettings DefaultSettings { get; } = new JsonSerializerSettings
+        public static JsonSerializerSettings DefaultSettings { get; } = CreateDefault();
+
+        public static JsonSerializerSettings CreateDefault()
         {
-            ContractResolver = new JsonNetContractResolver(),
-            TypeNameHandling = TypeNameHandling.Auto,
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore
-        };
+            return new JsonSerializerSettings
+            {
+                ContractResolver = new JsonNetContractResolver(),
+                TypeNameHandling = TypeNameHandling.Auto,
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                NullValueHandling = NullValueHandling.Ignore
+            };
+        }
 
         public static string ToJson(object target, bool readable = false)
         {
@@ -67,6 +72,7 @@ namespace UGF.JsonNet.Runtime
             using (var writer = new StringWriter())
             {
                 var jsonReader = new JsonTextReader(reader);
+
                 var jsonWriter = new JsonTextWriter(writer)
                 {
                     Formatting = readable ? Formatting.Indented : Formatting.None,
