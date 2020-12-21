@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.1) - 2020-12-21  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/6?closed=1)  
+    
+
+### Fixed
+
+- Fix ConvertPropertyNameWriter convert to string ([#22](https://github.com/unity-game-framework/ugf-jsonnet/pull/22))  
+    - Fix `ConvertPropertyNameWriter.ToString()` method to return `TextWriter` result value.
+
 ## [1.2.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.0) - 2020-12-20  
 
 ### Release Notes
