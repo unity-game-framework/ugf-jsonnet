@@ -55,5 +55,10 @@ namespace UGF.JsonNet.Runtime.Converters
         {
             return Names.TryGetValue(name, out string value) ? value : name;
         }
+
+        public override string ToString()
+        {
+            return TextWriter.ToString();
+        }
     }
 }
