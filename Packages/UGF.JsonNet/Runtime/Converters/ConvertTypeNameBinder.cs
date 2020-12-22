@@ -27,7 +27,7 @@ namespace UGF.JsonNet.Runtime.Converters
         {
             ConvertTypeInfo info = Provider.Get(serializedType);
 
-            assemblyName = info.Assembly;
+            assemblyName = !string.IsNullOrEmpty(info.Assembly) ? info.Assembly : null;
             typeName = info.Name;
         }
     }
