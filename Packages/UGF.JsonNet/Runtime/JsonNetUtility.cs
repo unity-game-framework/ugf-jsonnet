@@ -66,8 +66,10 @@ namespace UGF.JsonNet.Runtime
             return JsonConvert.DeserializeObject(text, type, settings);
         }
 
-        public static string Format(string text, bool readable = true)
+        public static string Format(string text, bool readable = true, int indent = 2)
         {
+            if (indent < 0) throw new ArgumentOutOfRangeException(nameof(indent));
+
             using (var reader = new StringReader(text))
             using (var writer = new StringWriter())
             {
@@ -76,7 +78,7 @@ namespace UGF.JsonNet.Runtime
                 var jsonWriter = new JsonTextWriter(writer)
                 {
                     Formatting = readable ? Formatting.Indented : Formatting.None,
-                    Indentation = 4
+                    Indentation = indent
                 };
 
                 jsonWriter.WriteToken(jsonReader);
