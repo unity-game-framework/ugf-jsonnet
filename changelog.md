@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.2) - 2020-12-22  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/7?closed=1)  
+    
+
+### Fixed
+
+- Fix convert type binder results in empty assembly information in type property ([#27](https://github.com/unity-game-framework/ugf-jsonnet/pull/27))  
+    - Fix `ConvertTypeNameBinder` to do not specify assembly name when no information provided.
+- Fix indentation can't be changed using JsonNetUtility.Format method ([#26](https://github.com/unity-game-framework/ugf-jsonnet/pull/26))  
+    - Change `JsonNetUtility.Format()` to receive `indent` parameter to specify formatting indentation.
+
 ## [1.2.1](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.1) - 2020-12-21  
 
 ### Release Notes
