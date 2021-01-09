@@ -4,7 +4,7 @@ UGF.JsonNet
 
 ## Info
 
-- **Version**: `1.2.2`
+- **Version**: `1.2.3`
 - **Unity**: `2020.2`
 - **API Compatibility Level**: `.NET Standard 2.0`
 
