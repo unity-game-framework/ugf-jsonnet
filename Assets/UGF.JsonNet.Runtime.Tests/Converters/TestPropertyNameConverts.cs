@@ -131,7 +131,7 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
 
             Assert.NotNull(result2);
             Assert.IsNotEmpty(result2.Targets);
-            Assert.AreEqual(2, result2.Targets.Count);
+            Assert.AreEqual(3, result2.Targets.Count);
         }
 
         [Test]
@@ -177,7 +177,7 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
 
             Assert.NotNull(result2);
             Assert.IsNotEmpty(result2.Targets);
-            Assert.AreEqual(2, result2.Targets.Count);
+            Assert.AreEqual(3, result2.Targets.Count);
         }
     }
 }
