@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.3.0) - 2021-03-03  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/9?closed=1)  
+    
+
+### Added
+
+- Add ConvertTypeNameBinder option to use default type information for unknown types ([#35](https://github.com/unity-game-framework/ugf-jsonnet/pull/35))  
+    - Add `ConvertTypeNameBinder.DefaultBinder` used when no type information found in `IConvertTypeProvider` provider.
+
+### Changed
+
+- Update publish registry ([#34](https://github.com/unity-game-framework/ugf-jsonnet/pull/34))  
+    - Update package publish registry.
+
 ## [1.2.3](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.2.3) - 2021-01-09  
 
 ### Release Notes
