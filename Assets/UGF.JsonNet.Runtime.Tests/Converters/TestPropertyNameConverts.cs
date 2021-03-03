@@ -24,6 +24,12 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
             public int IntValue { get; set; } = 10;
         }
 
+        private class Target3
+        {
+            public bool BoolValue { get; set; } = true;
+            public int IntValue { get; set; } = 10;
+        }
+
         [Test]
         public void ToJson()
         {
@@ -32,7 +38,8 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 Targets =
                 {
                     new Target1(),
-                    new Target2()
+                    new Target2(),
+                    new Target3()
                 }
             };
 
@@ -60,7 +67,8 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 Targets =
                 {
                     new Target1(),
-                    new Target2()
+                    new Target2(),
+                    new Target3()
                 }
             };
 
@@ -96,7 +104,8 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 Targets =
                 {
                     new Target1(),
-                    new Target2()
+                    new Target2(),
+                    new Target3()
                 }
             };
 
@@ -133,7 +142,8 @@ namespace UGF.JsonNet.Runtime.Tests.Converters
                 Targets =
                 {
                     new Target1(),
-                    new Target2()
+                    new Target2(),
+                    new Target3()
                 }
             };
 
