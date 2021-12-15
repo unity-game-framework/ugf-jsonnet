@@ -4,13 +4,13 @@ UGF.JsonNet
 
 ## Info
 
-- **Version**: `1.3.0`
-- **Unity**: `2020.2`
+- **Version**: `1.4.0`
+- **Unity**: `2020.3`
 - **API Compatibility Level**: `.NET Standard 2.0`
 
 ### Dependencies
 
-- `com.unity.nuget.newtonsoft-json`: `2.0.0`
+- `com.unity.nuget.newtonsoft-json`: `2.0.2`
 
 
 ### Description

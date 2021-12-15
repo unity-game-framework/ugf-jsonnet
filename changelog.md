@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.4.0) - 2021-12-15  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/10?closed=1)  
+    
+
+### Fixed
+
+- Fix serialize skips root object type information ([#38](https://github.com/unity-game-framework/ugf-jsonnet/pull/38))  
+    - Update dependencies: `com.unity.nuget.newtonsoft-json` to `2.0.2` version.
+    - Update package _Unity_ version to `2020.3`.
+    - Add `JsonNetUtility.ToJson()` method overload with `targetType` argument to specify target for serialization.
+    - Add `JsonNetUtility.ToJson<T>()` method overload to serialize object with specific type.
+    - Fix `JsonNetUtility,ToJson()` method adds type information when serializing abstract object when required.
+
 ## [1.3.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.3.0) - 2021-03-03  
 
 ### Release Notes
