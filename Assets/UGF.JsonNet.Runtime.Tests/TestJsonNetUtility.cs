@@ -21,12 +21,23 @@ namespace UGF.JsonNet.Runtime.Tests
         }
 
         [Test]
-        public void ToJson()
+        public void ToJsonGeneric()
         {
             var target = new Target3();
 
             string actual = JsonNetUtility.ToJson(target);
             string expected = Resources.Load<TextAsset>("data0").text;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void ToJsonAbstract()
+        {
+            var target = new Target3();
+
+            string actual = JsonNetUtility.ToJson((object)target);
+            string expected = Resources.Load<TextAsset>("data0_1").text;
 
             Assert.AreEqual(expected, actual);
         }

@@ -19,6 +19,16 @@ namespace UGF.JsonNet.Runtime
             };
         }
 
+        public static string ToJson<T>(T target, bool readable = false)
+        {
+            return ToJson(target, DefaultSettings, readable);
+        }
+
+        public static string ToJson<T>(T target, JsonSerializerSettings settings, bool readable = false)
+        {
+            return ToJson(target, typeof(T), settings, readable);
+        }
+
         public static string ToJson(object target, bool readable = false)
         {
             return ToJson(target, DefaultSettings, readable);
@@ -26,10 +36,16 @@ namespace UGF.JsonNet.Runtime
 
         public static string ToJson(object target, JsonSerializerSettings settings, bool readable = false)
         {
+            return ToJson(target, typeof(object), settings, readable);
+        }
+
+        public static string ToJson(object target, Type targetType, JsonSerializerSettings settings, bool readable = false)
+        {
             if (target == null) throw new ArgumentNullException(nameof(target));
+            if (targetType == null) throw new ArgumentNullException(nameof(targetType));
             if (settings == null) throw new ArgumentNullException(nameof(settings));
 
-            string text = JsonConvert.SerializeObject(target, settings);
+            string text = JsonConvert.SerializeObject(target, targetType, settings);
 
             if (readable)
             {
