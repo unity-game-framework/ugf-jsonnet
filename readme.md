@@ -2,15 +2,15 @@
 
 UGF.JsonNet
 
-## Info
+## Information
 
-- **Version**: `1.4.0`
-- **Unity**: `2020.3`
-- **API Compatibility Level**: `.NET Standard 2.0`
+- **Version**: `1.5.0`
+- **Unity**: `2022.2`
+- **API Compatibility Level**: `.NET Standard 2.1`
 
 ### Dependencies
 
-- `com.unity.nuget.newtonsoft-json`: `2.0.2`
+- `com.unity.nuget.newtonsoft-json`: `3.0.2`
 
 
 ### Description

@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.5.0) - 2023-01-04  
+
+### Release Notes
+
+- [Milestone](https://github.com/unity-game-framework/ugf-jsonnet/milestone/11?closed=1)  
+    
+
+### Changed
+
+- Update project ([#41](https://github.com/unity-game-framework/ugf-jsonnet/issues/41))  
+    - Update dependencies: `com.unity.nuget.newtonsoft-json` to `3.0.2` version.
+    - Update package _Unity_ version to `2022.2`.
+    - Update package _API Compatibility_ to `.NET Standard 2.1`.
+
 ## [1.4.0](https://github.com/unity-game-framework/ugf-jsonnet/releases/tag/1.4.0) - 2021-12-15  
 
 ### Release Notes
